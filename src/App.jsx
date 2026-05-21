@@ -1,10 +1,10 @@
-import './App.css'
-
-// App.jsx
-import TrackCard from './component/TrackCard/TrackCard'
+// Точний імпорт за твоєю структурою папок
+import Navbar from './component/Navbar/Navbar';
 
 function App() {
-  return <TrackCard />
+  return (
+        <Navbar />
+  );
 }
 
-export default App
+export default App;

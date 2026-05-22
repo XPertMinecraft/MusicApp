@@ -11,3 +11,4 @@ let tracks = [
     {id: 4, title: "Name5", album: "Album5", cover: false, src: "https://cdn.pixabay.com/download/audio/2022/10/25/audio_946b0939e5.mp3"},
     {id: 5, title: "Name6", album: "Album6", cover: false, src: "https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3"},
 ]
+export default tracks

@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { PlayerContext } from "../../context/PlayerContext";
 //В функцию ложим props что б пользоваться им
 export default function TrackCard(props) {
-     const { playTrack } = useContext(PlayerContext);
+    const { selectTrack } = useContext(PlayerContext);
     return (
         
         <section className="trackcard">
@@ -28,7 +28,7 @@ export default function TrackCard(props) {
             <p className="isCover">
                 {props.cover===true?"Cover":""}
             </p>
-            <button onClick={() => playTrack({
+            <button onClick={() => selectTrack({
     id: props.id,
     title: props.title,
     album: props.album,

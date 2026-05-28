@@ -10,10 +10,6 @@
     display: flex;
     justify-content: center;
     margin: 0 auto;
-}
-.left_block{
-    width: 37%;
-    height: 700px;
-    background: red;
-
+    margin-top: 50px;
+    margin-bottom: 50px;
 }

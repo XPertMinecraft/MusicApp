@@ -7,7 +7,7 @@ pages. Это беда ведь я хотел подключить туда ма
 
 //Импорты. Те что есть не трогайте, но новые добавляйте
 import './App.css'
-
+import Left from './component/Left_block/Left';
 import Right from './component/Right_block/Right';
 import PlayerProvider, { PlayerContext } from './context/PlayerContext';
 import { useContext } from 'react';
@@ -19,9 +19,9 @@ App.jsx*/
 function AppContent() {
   return (
     <div className="box">
-      <div className="left_block"></div>
-      <Right />
-    </div>
+   <Left />
+   <Right />
+</div>
   );
 }
 

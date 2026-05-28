@@ -5,13 +5,21 @@ export const PlayerContext = createContext();
 export default function PlayerProvider({ children }) {
 
     const audioRef = useRef(null);
+    const [currentTime, setCurrentTime] = useState(0);
+const [duration, setDuration] = useState(0);
 
     const [currentTrack, setCurrentTrack] = useState(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const [volume, setVolumeState] = useState(1);
     const [favorites, setFavorites] = useState([]);
+    const selectTrack = (track) => {
+    setCurrentTrack(track);
+};
 
     const playTrack = (track) => {
+        const selectTrack = (track) => {
+    setCurrentTrack(track);
+};
         setCurrentTrack(track);
 
         if (audioRef.current) {
@@ -47,17 +55,28 @@ export default function PlayerProvider({ children }) {
 
     return (
         <PlayerContext.Provider value={{
-            currentTrack,
-            isPlaying,
-            volume,
-            favorites,
-            playTrack,
-            pauseTrack,
-            setVolume,
-            addToFav,
-            removeFromFav
-        }}>
-            <audio ref={audioRef} />
+    currentTrack,
+    isPlaying,
+    volume,
+    favorites,
+    playTrack,
+    pauseTrack,
+    setVolume,
+    addToFav,
+    removeFromFav,
+    currentTime,
+    duration,
+    selectTrack
+}}>
+           <audio
+    ref={audioRef}
+    onTimeUpdate={() => {
+        setCurrentTime(audioRef.current.currentTime);
+    }}
+    onLoadedMetadata={() => {
+        setDuration(audioRef.current.duration);
+    }}
+/>
             {children}
         </PlayerContext.Provider>
     );

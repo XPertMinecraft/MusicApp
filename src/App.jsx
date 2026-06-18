@@ -5,7 +5,7 @@ import Right from './component/Right_block/Right';
 
 import PlayerProvider from './context/PlayerContext';
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Search from "./pages/Search";
@@ -18,7 +18,8 @@ function AppContent() {
       <Left />
 
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Navigate to="/home" replace={true} />} />
+        <Route path='/home' element={<Home />} />
         <Route path='/search' element={<Search />} />
         <Route path='/favorites' element={<Favorites />} />
       </Routes>

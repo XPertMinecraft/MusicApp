@@ -31,7 +31,7 @@ function AppContent() {
 function App() {
   return (
     <PlayerProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/MusicApp">
         <AppContent />
       </BrowserRouter>
     </PlayerProvider>
